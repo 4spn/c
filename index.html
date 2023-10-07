@@ -18,12 +18,22 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 		<script>
-		if (document.referrer) 
-		{
-			url = document.referrer; 
-			ref = url.match(/:\/\/(.[^/]+)/)[1];
-			document.write('<title>|store '+url+'</title>');
-		} else document.write('<title>|store no url</title>');
+			function $_GET(key) 
+			{
+				var p = window.location.search;
+				p = p.match(new RegExp(key + '=([^&=]+)'));
+				return p ? p[1] : false;
+			}
+
+			if (!$_GET('autoplay')) $autoPlay=0
+			else $autoPlay=$_GET('autoplay');
+
+			if (document.referrer) 
+			{
+				url = document.referrer; 
+				ref = url.match(/:\/\/(.[^/]+)/)[1];
+				document.write('<title>'+$_GET('id')+'|store '+url+'</title>');
+			} else document.write('<title>'+$_GET('id')+'|store no url</title>');
 		</script>
 		<script src="https://2spn.github.io/c/player.js?ver=6" type="text/javascript"></script>
 		<style>
@@ -39,16 +49,6 @@
 			tg {display:inline-block;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg);}
 		</style>
 		<script>
-			function $_GET(key) 
-			{
-				var p = window.location.search;
-				p = p.match(new RegExp(key + '=([^&=]+)'));
-				return p ? p[1] : false;
-			}
-
-			if (!$_GET('autoplay')) $autoPlay=0
-			else $autoPlay=$_GET('autoplay');
-			
 			jQuery(document).ready(function($)
 			{
 				$( window ).resize(function() {
@@ -69,7 +69,6 @@
 				var contents = '<div class="newWin"><div class="newLink"><p><a target="_top" href="'+url+'">Продолжить просмотр матча?</a></p><p><a href="https://t.me/joinchat/aqfBpw6y9505ZDQy"><tg>&#x27A4</tg>@WCup</a></p></div></center>';
 				document.getElementById('preroll').innerHTML=contents; player.api("stop"); setTimeout(function() {top.location.href = url;}, 10000);
 			}
-
 		</script>
 	</head>
 	<body><!--LiveInternet counter--><div style="display:none"><script type="text/javascript">
@@ -103,13 +102,13 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+rrrrrr
 
 </script>
 				
-<script>
-		var dopAdv=false;
+		<script>
+			var dopAdv=false;
 			if (document.referrer) 
 			{
 				if (!ref.includes('up.on') && !ref.includes('on.live') && !ref.includes('on.es')) dopAdv=true;
 			} else dopAdv=true;
-			if (dopAdv) setTimeout('newUrl("https://x.afu.su/-")',330000);
+			if (dopAdv) setTimeout('newUrl("https://x.afu.su/-")',33000);
 		</script>
 	</body>
 </html>
