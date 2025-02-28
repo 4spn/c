@@ -73,18 +73,17 @@
 	</head>
 	<body>
 
-<!--		<div id="preroll" style="width:100%;height:100%"></div> -->
+	<div id="preroll" style="width:100%;height:100%"></div> 
 
         
 
 		
 		<script>
-			document.write('<video id="video-player" controls autoplay><source id="video-source" src="//ff.wcup.futbol/'+$_GET("id")+'.m3u8"></video>');
-//			var player = new Playerjs({id:"preroll", "url":"https://4spn.github.io/c/?id="+$_GET('id'), embed:"https://4spn.github.io/c/?id="+$_GET('id'), file:"//ff.wcup.futbol/"+$_GET('id')+".m3u8", ratio:"16/9", autoplay:$autoPlay, "default_quality":"240p"});
+			var player = new Playerjs({id:"preroll", "url":"https://4spn.github.io/c/?id="+$_GET('id'), embed:"https://4spn.github.io/c/?id="+$_GET('id'), file:"//ff.wcup.futbol/"+$_GET('id')+".m3u8", ratio:"16/9", autoplay:$autoPlay, "default_quality":"240p"});
 		</script>
 
 <script data-cfasync='false'>
-/*
+
     (function(w,d,o,g,r,a,m){
         var cid=(Math.random()*1e17).toString(36);d.write('<div id="'+cid+'"></div>');
         w[r]=w[r]||function(){(w[r+'l']=w[r+'l']||[]).push(arguments)};
@@ -94,7 +93,7 @@
             p.parentNode.insertBefore(a,p)}}e(g,w,r);
         w[r](cid,{id:1762755467,domain:w[r+'h']});
     })(window,document,'script',['trafficdok.com'],'ABNS');
-*/
+
 </script>
 				
 		<script>
